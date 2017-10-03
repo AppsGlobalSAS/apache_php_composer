@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 ENV app /var/www
 WORKDIR ${app}
 
@@ -25,10 +25,4 @@ RUN apt-get update && \
 	a2enmod rewrite
 
 RUN wget https://getcomposer.org/composer.phar && chmod u+x composer.phar && mv composer.phar /usr/local/bin/composer
-
-RUN dpkg-reconfigure locales && \
-    locale-gen C.UTF-8 && \
-    /usr/sbin/update-locale LANG=C.UTF-8
-
-ENV LC_ALL C.UTF-8
 
