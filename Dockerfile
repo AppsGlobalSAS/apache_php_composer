@@ -17,7 +17,8 @@ RUN apt-get update && \
 		php-xml \
 		php-pgsql \
 		php-curl \
-		php-gd && \
+		php-gd \
+		nfs-common && \
 	apt-get -y autoremove && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/* && \
